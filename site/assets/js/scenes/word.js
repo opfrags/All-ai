@@ -1,7 +1,7 @@
 /* Scene: Word-style document creation. Rough notes become a formatted three-page proposal. */
 ALLAI.register({
   id: 'word',
-  frame: '.w-desk',
+  frame: '.w-page--1@w',
   start: '.w-notes',
   html: function (ui) {
     return ui.bar({ file: 'Roofing proposal.docx', app: 'Document editor', letter: 'W', ico: 'w-ico' }) +

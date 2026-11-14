@@ -240,7 +240,7 @@ html.js.is-ready .nv { opacity: 1; }
 .sflat p { color: var(--mute); }
 
 /* ---------- task gallery ---------- */
-.gal__tabs { display: flex; gap: 6px; margin-bottom: 22px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+.gal__tabs { display: flex; flex-wrap: nowrap; gap: 6px; margin-bottom: 22px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
 .gal__tabs::-webkit-scrollbar { display: none; }
 .gal__grid { display: grid; grid-template-columns: minmax(250px, .46fr) minmax(0, 1.5fr); gap: clamp(18px, 2.4vw, 36px); align-items: start; }
 .gal__list { display: flex; flex-direction: column; gap: 6px; }
@@ -279,9 +279,10 @@ html.js.is-ready .nv { opacity: 1; }
 .mem { display: grid; grid-template-columns: minmax(280px, .8fr) minmax(0, 1.25fr); gap: clamp(24px, 4vw, 72px); align-items: center; }
 .mem__copy { display: flex; flex-direction: column; gap: 18px; }
 .mem__big { font: 500 clamp(1.25rem, 1.2vw + .9rem, 1.7rem)/1.3 var(--sans); letter-spacing: -.02em; }
+.mem__viz { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 10px; }
 .memviz { position: relative; margin-top: 10px; padding: 18px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto 1fr; gap: 0; align-items: center; }
 .memviz__col { display: flex; flex-direction: column; gap: 10px; }
-.memviz__item { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--line); font-size: .8125rem; color: var(--mute); transition: border-color .4s, box-shadow .4s; }
+.memviz__item { display: flex; flex-direction: column; gap: 2px; padding: 12px 16px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--line); font-size: .8125rem; color: var(--mute); transition: border-color .4s, box-shadow .4s; }
 .memviz__item b { color: var(--text); font-weight: 600; font-size: .9rem; }
 .memviz__item.is-hot { border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-soft); }
 .memviz__wire { width: clamp(46px, 7vw, 96px); height: 190px; overflow: visible; }
@@ -476,3 +477,7 @@ html:not(.guide-on) .mm-dock, html:not(.guide-on) .mm-particles { display: none 
   html.js .hero .mon, html.js .hero .mon__screen::before, html.js .nv { transition-duration: .01s !important; transition-delay: 0s !important; }
   .story__ws, .story__t, .story__d { transition-duration: .01s !important; }
 }
+
+/* FitCheck strip keeps light text on its dark bar in both themes (mascot.css loads later) */
+html .fc-bar { --fc-fg: #c6cedf; --fc-hi: #7da2ff; --fc-line: rgba(255, 255, 255, .12); color: #c6cedf !important; }
+html .fc-bar .fc-bar__msg { color: #c6cedf; }

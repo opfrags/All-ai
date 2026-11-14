@@ -17,7 +17,7 @@
   };
   ALLAI.register({
     id: 'blender',
-    frame: '.b-view',
+    frame: '.b-world',
     start: '.b-tl',
     html: function (ui) {
       return ui.bar({ file: 'bottle_product.blend', app: '3D workspace (Blender-style)', letter: '3D', ico: 'b-ico' }) +
@@ -31,7 +31,7 @@
               '<div class="b-light"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><b>Key light</b></div>' +
             '</div>' +
             '<div class="b-camframe" data-show="cam"><span>Camera · 50 mm</span></div>' +
-            '<div class="b-render"><div class="b-studio"></div><div class="b-rshadow"></div>' + bottle('b-bottle--final') + '<div class="b-refl"></div></div>' +
+            '<div class="b-render">' + ui.media('blender-render', '<div class="b-studio"></div><div class="b-rshadow"></div>' + bottle('b-bottle--final') + '<div class="b-refl"></div>') + '</div>' +
             '<div class="b-scan"></div>' +
             '<div class="b-rinfo" data-show="render"><span>Samples <b data-count="render" data-to="128" data-from="0"></b>/128</span><span data-show="done">bottle_hero.png · 1920 × 1080</span></div>' +
           '</div>' +

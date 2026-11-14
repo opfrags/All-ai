@@ -2,7 +2,7 @@
    Totals are consistent: 40 x 11.50 = 460.00, 2 x 95.00 = 190.00, delivery 35.00, total 685.00. */
 ALLAI.register({
   id: 'invoice',
-  frame: '.q-paper',
+  frame: '.q-paper@w',
   start: '.q-form',
   html: function (ui) {
     var line = function (cls, step, name, qty, price, amt) {
@@ -42,6 +42,6 @@ ALLAI.register({
     { id: 'total', label: 'Calculating the total', cur: '.q-table', at: [.86, 1.25], click: true, d: 1400 },
     { id: 'check', label: 'Checking prices and quantities', cur: '.q-t-check', click: true, d: 1700 },
     { id: 'brand', label: 'Applying the company branding', cur: '.q-t-brand', click: true, d: 1300 },
-    { id: 'export', label: 'Quote ready: waiting for your OK', cur: '.q-t-export', click: true, d: 1700 }
+    { id: 'export', label: 'Quote ready: waiting for your OK', cur: '.q-t-export', click: true, d: 1700, frame: '.q-desk' }
   ]
 });

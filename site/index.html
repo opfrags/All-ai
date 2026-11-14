@@ -38,6 +38,7 @@
 <link rel="stylesheet" href="/static/pub/mascot.css">
 <script src="/assets/js/site.js?v=20261114a" defer></script>
 <script src="/assets/js/scenes/manifest.js?v=20261114a" defer></script>
+<script src="/assets/js/scenes/media.js?v=20261114a" defer></script>
 <script src="/assets/js/stage.js?v=20261114a" defer></script>
 <script src="/assets/js/scenes/word.js?v=20261114a" defer data-scene="word"></script>
 <script src="/assets/js/scenes/blender.js?v=20261114a" defer data-scene="blender"></script>
@@ -227,7 +228,10 @@
    <h2 class="h2" id="mem-h" data-split>It learns your business once.</h2>
    <p class="mem__big rv i2">Your prices. Your customers. The way you like things done.</p>
    <p class="lead rv i3">Your AI employee keeps them in one shared memory and uses them for every job, so the invoice, the website and the app all start from the same information.</p>
-   <div class="memviz rv i4" data-memviz role="img" aria-label="Illustration with sample data: a stored cement price of 11 dollars 50 flows from the shared memory into a quotation, the website price list and the app order form.">
+  </div>
+  <div class="rv"><div data-ws="svc" data-scene="memory"></div></div>
+  <div class="mem__viz">
+   <div class="memviz rv" data-memviz role="img" aria-label="Illustration with sample data: a stored cement price of 11 dollars 50 flows from the shared memory into a quotation, the website price list and the app order form.">
     <div class="memviz__col">
      <div class="memviz__item" data-mem="0"><span>Stored price</span><b>Cement 50 kg: $11.50</b></div>
      <div class="memviz__item" data-mem="1"><span>Stored customer</span><b>Mrs Dube, account 0148</b></div>
@@ -245,7 +249,6 @@
    </div>
    <p class="fine">Illustration with fictional sample data.</p>
   </div>
-  <div class="rv"><div data-ws="svc" data-scene="memory"></div></div>
  </div>
 </section>
 

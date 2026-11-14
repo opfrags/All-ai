@@ -1,0 +1,36 @@
+/* Scene: graphic design (original artwork) */
+.sc-design .g-ico { background: #7a3fb0; }
+.sc-design .g-canvas { background: #262b35 radial-gradient(rgba(255, 255, 255, .05) 1px, transparent 1.2px) 0 0 / 14px 14px; align-items: center; justify-content: center; overflow: hidden; }
+.sc-design .g-boards { display: flex; align-items: center; gap: 16px; transition: transform .8s var(--ease); }
+.sc-design .g-board { position: relative; flex: none; width: 214px; height: 214px; border-radius: 3px; overflow: hidden; box-shadow: 0 14px 34px -12px rgba(0, 0, 0, .75); color: #10141f; }
+.sc-design .g-bg { position: absolute; inset: 0; background: #f1ede6; transition: background .7s; }
+.sc-design .g-prod { position: absolute; left: 50%; top: 14px; width: 128px; margin-left: -64px; transition: opacity .45s var(--ease), transform .7s var(--ease), left .5s var(--ease); }
+.sc-design .g-loaf { display: block; width: 100%; height: auto; }
+.sc-design .g-h { position: absolute; left: 16px; right: 16px; top: 106px; margin: 0; min-height: 24px; font: 700 21px/1.1 'DM Sans', sans-serif; letter-spacing: -.03em; transition: color .6s, left .5s var(--ease); }
+.sc-design .g-p { position: absolute; left: 16px; top: 133px; margin: 0; font: 500 11px/1.2 'DM Sans', sans-serif; transition: color .6s, opacity .4s, transform .5s, left .5s var(--ease); }
+.sc-design .g-cta { position: absolute; left: 16px; bottom: 16px; padding: 6px 11px; border-radius: 7px; background: #2563ff; color: #fff; font: 600 9.5px/1.2 'DM Sans', sans-serif; transition: opacity .4s, transform .5s, left .5s var(--ease); }
+.sc-design .g-brand { position: absolute; right: 14px; bottom: 21px; font: 700 8px/1 'JetBrains Mono', monospace; letter-spacing: .1em; text-transform: uppercase; color: #9fb6ff; }
+.sc-design.on-brand .g-bg { background: linear-gradient(160deg, #1b2c58, #0c1430); }
+.sc-design.on-brand .g-h { color: #fff; } .sc-design.on-brand .g-p { color: #c4cee6; }
+.sc-design .g-board--sq .g-h, .sc-design .g-board--sq .g-p, .sc-design .g-board--sq .g-cta { left: 24px; }
+.sc-design.on-align .g-board--sq .g-h, .sc-design.on-align .g-board--sq .g-p, .sc-design.on-align .g-board--sq .g-cta { left: 16px; }
+.sc-design .g-guide { position: absolute; z-index: 4; background: #ff4fd8; opacity: 0; transition: opacity .3s; }
+.sc-design .g-guide--v { left: calc(50% - 91px); top: 20px; bottom: 20px; width: 1px; }
+.sc-design .g-guide--h { left: 30px; right: 30px; top: calc(50% + 91px); height: 1px; }
+.sc-design.on-align .g-guide { opacity: 1; } .sc-design.on-variants .g-guide { opacity: 0; }
+.sc-design .g-vwrap { flex: none; width: 0; overflow: hidden; transition: width .8s var(--ease), opacity .5s, transform .6s; }
+.sc-design .g-vwrap.is-on { width: 128px; }
+.sc-design .g-board--v { width: 128px; height: 228px; }
+.sc-design .g-board--v .g-bg { background: linear-gradient(160deg, #1b2c58, #0c1430); }
+.sc-design .g-board--v .g-prod { width: 104px; margin-left: -52px; top: 26px; }
+.sc-design .g-board--v .g-h { left: 12px; right: 12px; top: 106px; font-size: 19px; color: #fff; }
+.sc-design .g-board--v .g-p { left: 12px; top: 152px; font-size: 9.5px; color: #c4cee6; }
+.sc-design .g-board--v .g-cta { left: 12px; bottom: 30px; font-size: 8.5px; }
+.sc-design .g-board--v .g-brand { right: auto; left: 12px; bottom: 12px; }
+.sc-design.on-variants .g-boards { transform: scale(.94); }
+.sc-design .g-sizes { position: absolute; left: 0; right: 0; bottom: 8px; display: flex; justify-content: center; gap: 46px; color: #c5ccdb; font: 500 8px/1 'JetBrains Mono', monospace; }
+.sc-design .g-sw { display: flex; gap: 6px; padding: 8px 10px; }
+.sc-design .g-sw i { width: 20px; height: 20px; border-radius: 5px; outline-offset: 2px; }
+.sc-design .g-c1 { background: #1b2c58; } .sc-design .g-c2 { background: #2563ff; } .sc-design .g-c3 { background: #f1ede6; } .sc-design .g-c4 { background: #c98a3d; }
+.sc-design .g-prod img.g-photo { width: 100%; height: 96px; object-fit: contain; filter: drop-shadow(0 8px 10px rgba(0, 0, 0, .35)); }
+.sc-design .g-board--v .g-prod img.g-photo { height: 78px; }

@@ -61,3 +61,4 @@
 .sc-code.on-done .c-card span { margin-left: 0; }
 .sc-code.on-done .c-hero { padding: 20px 22px 24px; }
 .sc-code.on-done .c-hero h5 { font-size: 21px; }
+.sc-code .c-card i { overflow: hidden; display: block; }

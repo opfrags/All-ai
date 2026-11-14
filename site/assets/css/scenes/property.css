@@ -1,0 +1,39 @@
+/* Scene: 3D property walkthrough (illustrative model from a supplied plan) */
+.sc-property .h-ico { background: #2a3142; font-size: 7px; }
+.sc-property .h-planbox { margin: 8px; padding: 6px; border-radius: 7px; background: #0d1016; border: 1px solid var(--a-line); }
+.sc-property .h-plan { display: block; width: 100%; height: auto; }
+.sc-property .h-walls path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.1s var(--ease-io); }
+.sc-property .h-walls path:nth-child(2) { transition-delay: .35s; }
+.sc-property.on-plan .h-walls path { stroke-dashoffset: 0; }
+.sc-property .h-labels { opacity: 0; transition: opacity .5s .7s; } .sc-property.on-plan .h-labels { opacity: 1; }
+.sc-property .h-pt { opacity: 0; transform-box: fill-box; transform-origin: 50% 50%; transform: scale(.2); transition: opacity .3s, transform .5s var(--ease); }
+.sc-property.on-points .h-pt { opacity: 1; transform: none; }
+.sc-property .h-pt2 { transition-delay: .25s; } .sc-property .h-pt3 { transition-delay: .5s; } .sc-property .h-pt4 { transition-delay: .75s; }
+.sc-property .h-path { transition: stroke-dashoffset 1s var(--ease-io); } .sc-property.on-path .h-path { stroke-dashoffset: 0; }
+.sc-property .h-view { background: radial-gradient(110% 90% at 50% 30%, #2f3644, #1c2029 75%); overflow: hidden; }
+.sc-property .h-iso { position: absolute; inset: 0; display: grid; place-items: center; perspective: 900px; transition: opacity .6s, transform .9s var(--ease); }
+.sc-property .h-floor { position: relative; width: 300px; height: 200px; transform: rotateX(58deg) rotateZ(-32deg); transform-style: preserve-3d; background: linear-gradient(rgba(255, 255, 255, .08) 1px, transparent 1px) 0 0 / 20px 20px, linear-gradient(90deg, rgba(255, 255, 255, .08) 1px, transparent 1px) 0 0 / 20px 20px, #2a303c; outline: 2px solid rgba(223, 229, 242, .0); opacity: .25; transition: opacity .6s, outline-color .6s; }
+.sc-property.on-plan .h-floor { opacity: 1; outline-color: rgba(223, 229, 242, .7); }
+.sc-property .h-w { position: absolute; background: linear-gradient(#eef1f8, #9aa3b8); transform-origin: 50% 100%; transform: rotateX(-90deg) scaleY(0); transition: transform .9s var(--ease); opacity: .92; }
+.sc-property .h-w1 { left: 0; right: 0; top: -34px; height: 34px; } .sc-property .h-w2 { left: 0; right: 0; top: 166px; height: 34px; background: linear-gradient(#c9d0de, #7d879c); }
+.sc-property .h-w3 { left: 150px; width: 150px; top: 70px; height: 34px; background: linear-gradient(#dfe5f2, #8e97aa); } .sc-property .h-w4 { left: 0; width: 104px; top: 70px; height: 34px; background: linear-gradient(#dfe5f2, #8e97aa); }
+.sc-property .h-w5, .sc-property .h-w6 { top: 0; width: 34px; height: 200px; transform-origin: 0 50%; transform: rotateY(90deg) scaleX(0); background: linear-gradient(90deg, #7d879c, #c9d0de); }
+.sc-property .h-w5 { left: 0; } .sc-property .h-w6 { left: 300px; }
+.sc-property.on-walls .h-w { transform: rotateX(-90deg); } .sc-property.on-walls .h-w5, .sc-property.on-walls .h-w6 { transform: rotateY(-90deg); }
+.sc-property .h-walk { position: absolute; inset: 0; opacity: 0; transition: opacity .7s; }
+.sc-property.on-preview .h-walk { opacity: 1; } .sc-property.on-preview .h-iso { opacity: 0; transform: scale(1.5); }
+.sc-property .h-room { position: absolute; inset: 0; width: 100%; height: 100%; transition: opacity .8s, transform 1.6s var(--ease-io); }
+.sc-property .h-r2 { opacity: 0; transform: scale(.9); }
+.sc-property.on-walk .h-r1 { opacity: 0; transform: scale(1.5); } .sc-property.on-walk .h-r2 { opacity: 1; transform: none; }
+.sc-property .h-hud { position: absolute; left: 10px; right: 10px; bottom: 26px; display: flex; justify-content: space-between; align-items: center; }
+.sc-property .h-stop { position: relative; padding: 5px 10px; min-width: 76px; border-radius: 8px; background: rgba(8, 10, 15, .8); color: #fff; font: 600 10px/1.2 'DM Sans', sans-serif; }
+.sc-property .h-stop em { font-style: normal; } .sc-property .h-s2 { display: none; }
+.sc-property.on-walk .h-s1 { display: none; } .sc-property.on-walk .h-s2 { display: inline; }
+.sc-property .h-dots { display: flex; gap: 5px; padding: 6px 8px; border-radius: 10px; background: rgba(8, 10, 15, .8); }
+.sc-property .h-dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255, 255, 255, .35); }
+.sc-property.on-preview .h-dots i:nth-child(1), .sc-property.on-walk .h-dots i:nth-child(2) { background: #7da2ff; }
+.sc-property.on-walk .h-dots i:nth-child(1) { background: rgba(255, 255, 255, .35); }
+.sc-property .h-note { position: absolute; left: 10px; bottom: 6px; color: #c5ccdb; font: 400 8px/1 'JetBrains Mono', monospace; }
+.sc-property img.h-model { position: absolute; inset: 0; opacity: 0; transition: opacity .9s .5s; }
+.sc-property.on-walls img.h-model { opacity: 1; }
+.sc-property.on-preview img.h-model { opacity: 0; transition-delay: 0s; }

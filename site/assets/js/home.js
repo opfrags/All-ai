@@ -21,7 +21,7 @@
   /* ================= hero: 4 jobs in sequence, then the finished outputs ================= */
   (function hero() {
     var host = q('[data-ws="hero"]'); if (!host) return;
-    var order = A.heroOrder, SPEED = 1.6;
+    var order = A.heroOrder, SPEED = A.heroSpeed = 1.75;
     var ws = A.workstation(host, { sides: true });
     var player = new A.Player(ws.main, { speed: SPEED, hold: 900 });
     var job = A.jobPanel(ws.left), tray = A.trayPanel(ws.right, order);

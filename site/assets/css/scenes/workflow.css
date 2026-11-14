@@ -1,0 +1,24 @@
+/* Scene: workflow automation */
+.sc-workflow .f-ico { background: #1d4ed8; }
+.sc-workflow .f-canvas { background: #0f1218 radial-gradient(rgba(255, 255, 255, .07) 1px, transparent 1.2px) 0 0 / 16px 16px; overflow: hidden; }
+.sc-workflow .f-nodes { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 44px 18px 0; }
+.sc-workflow .f-node { position: relative; min-height: 124px; padding: 12px 10px 10px; border-radius: 10px; background: var(--a-panel); border: 1px solid var(--a-line2); display: flex; flex-direction: column; gap: 3px; font-size: 8.6px; color: var(--a-faint); transition: border-color .4s, box-shadow .4s, background .4s; }
+.sc-workflow .f-node b { color: var(--a-text); font-size: 10.6px; font-weight: 600; }
+.sc-workflow .f-node.is-on { border-color: rgba(125, 162, 255, .8); background: #131a2e; box-shadow: 0 0 26px -10px rgba(37, 99, 255, 1); }
+.sc-workflow .f-n { display: grid; place-items: center; width: 16px; height: 16px; margin-bottom: 4px; border-radius: 5px; background: var(--a-panel3); color: #fff; font: 600 8px/1 'JetBrains Mono', monospace; }
+.sc-workflow .f-node.is-on .f-n { background: var(--a-blue); }
+.sc-workflow .f-node p { margin: auto 0 0; padding: 6px 7px; border-radius: 6px; background: #0b1226; border: 1px solid rgba(125, 162, 255, .3); color: #dbe5ff; font-size: 8.8px; line-height: 1.35; }
+.sc-workflow .f-tick { position: absolute; right: 8px; top: 9px; width: 15px; height: 15px; border-radius: 50%; background: var(--a-blue) no-repeat 50% / 70% url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.3l2.3 2.3 4.7-5' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+.sc-workflow .f-track { position: absolute; left: 60px; right: 60px; top: 28px; height: 2px; background: var(--a-line2); }
+.sc-workflow .f-track i { display: block; height: 100%; background: var(--a-blue-hi); transform-origin: 0 50%; transform: scaleX(0); transition: transform 1s var(--ease-io); }
+.sc-workflow .f-pkt { position: absolute; z-index: 3; left: 0; top: 17px; width: 25%; display: flex; justify-content: center; opacity: 0; transition: transform 1s var(--ease-io), opacity .4s; }
+.sc-workflow .f-pkt span { padding: 4px 9px; border-radius: 10px; background: var(--a-blue); color: #fff; font: 600 8.5px/1.2 'DM Sans', sans-serif; box-shadow: 0 0 16px rgba(37, 99, 255, .9); }
+.sc-workflow.on-trigger .f-pkt { opacity: 1; }
+.sc-workflow.on-contact .f-pkt { transform: translateX(100%); } .sc-workflow.on-contact .f-track i { transform: scaleX(.333); }
+.sc-workflow.on-quote .f-pkt { transform: translateX(200%); } .sc-workflow.on-quote .f-track i { transform: scaleX(.666); }
+.sc-workflow.on-follow .f-pkt { transform: translateX(300%); } .sc-workflow.on-follow .f-track i { transform: scaleX(1); }
+.sc-workflow.on-done .f-pkt { opacity: 0; }
+.sc-workflow .f-log { position: absolute; left: 18px; right: 18px; bottom: 14px; border-radius: 9px; background: #0a0c11; border: 1px solid var(--a-line); }
+.sc-workflow .f-lines { padding: 6px 10px 8px; min-height: 84px; font-size: 8.6px; line-height: 1.65; color: #aab2c2; }
+.sc-workflow .f-lines p { margin: 0; }
+.sc-workflow .f-ok { color: var(--a-blue-hi); }

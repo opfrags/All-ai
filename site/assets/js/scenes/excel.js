@@ -11,7 +11,7 @@
   var bars = [[100, 'Cement'], [97.8, 'Roof'], [49.6, 'Paint'], [36.5, 'Nails'], [27.3, 'Locks']];
   ALLAI.register({
     id: 'excel',
-    frame: '.x-grid',
+    frame: '.x-grid@w',
     start: '.x-fx',
     html: function (ui) {
       var grid = '<div class="x-row x-row--h"><i></i><b>A</b><b>B</b><b>C</b><b>D</b></div>' +

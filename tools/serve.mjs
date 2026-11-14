@@ -30,7 +30,7 @@ const TYPES = {
   '.xml': 'application/xml', '.webp': 'image/webp',
 };
 
-const BACKEND = /^\/(plans|login|signup|audit|forgot|reset|checkout|dashboard|security|account)\/?$/;
+const BACKEND = /^\/(plans|login|signup|audit|forgot|reset|checkout|dashboard|security|account|privacy|terms|refunds)\/?$/;
 
 const stub = (route) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Backend route ${route}</title><link rel="stylesheet" href="/assets/css/allai.css"></head>

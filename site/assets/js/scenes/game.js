@@ -13,7 +13,7 @@ ALLAI.register({
           '<div class="a-h">Assets</div><div class="g-assets"><span class="g-as g-as--plat" data-sel="plat,coins"></span><span class="g-as g-as--coin" data-sel="coins,char"></span><span class="g-as g-as--char" data-sel="char,logic"></span><span class="g-as g-as--flag"></span></div>' +
         '</div>' +
         '<div class="a-main g-view">' +
-          '<div class="g-sky"></div><div class="g-grid"></div>' +
+          '<div class="g-sky">' + ui.media('game-bg', '') + '</div><div class="g-grid"></div>' +
           '<div class="g-hud"><span>SCORE <b class="g-score">000</b></span><span class="g-coins">Coins <b class="g-cn">0</b>/3</span></div>' +
           '<div class="g-plat g-plat--a" data-show="plat"></div><div class="g-plat g-plat--b dl2" data-show="plat"></div>' +
           '<i class="g-coin g-coin--1 t-pop" data-show="coins"></i><i class="g-coin g-coin--2 t-pop dl1" data-show="coins"></i><i class="g-coin g-coin--3 t-pop dl2" data-show="coins"></i>' +

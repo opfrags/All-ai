@@ -5,7 +5,7 @@
   var t = function (s) { return '<b class="k">' + s + '</b>'; }, a = function (s) { return '<b class="at">' + s + '</b>'; }, q = function (s) { return '<b class="s">' + s + '</b>'; }, n = function (s) { return '<b class="n">' + s + '</b>'; };
   ALLAI.register({
     id: 'code',
-    frame: '.c-prev',
+    frame: '.c-code',
     start: '.c-term',
     html: function (ui) {
       return ui.bar({ file: 'bakery-site', app: 'Code editor', letter: '&lt;/&gt;', ico: 'c-ico' }) +
@@ -49,7 +49,7 @@
             '<div class="c-url"><span class="c-dots"><i></i><i></i><i></i></span><span class="c-addr mono">localhost:5173</span><span class="c-dev c-dev--d" data-sel="done"><svg viewBox="0 0 12 12"><rect x="1" y="2" width="10" height="6.5" rx="1" fill="none" stroke="currentColor"/><path d="M4 10.5h4" stroke="currentColor"/></svg></span><span class="c-dev c-dev--m" data-sel="resp,done"><svg viewBox="0 0 12 12"><rect x="3.5" y="1" width="5" height="10" rx="1.2" fill="none" stroke="currentColor"/></svg></span></div>' +
             '<div class="c-stage"><div class="c-page">' +
               '<div class="c-hero" data-show="html"><span class="c-brand">Baobab Bakery</span><h5>Fresh bread, baked every morning.</h5><p>Baobab Bakery, open 6am to 6pm.</p><span class="c-btn">Order on WhatsApp</span></div>' +
-              '<div class="c-menu" data-show="fix"><div class="c-card"><i></i><b>Farm loaf</b><span>$1.20</span></div><div class="c-card"><i></i><b>Meat pie</b><span>$2.50</span></div><div class="c-card"><i></i><b>Scones x6</b><span>$3.00</span></div></div>' +
+              '<div class="c-menu" data-show="fix"><div class="c-card"><i>' + ui.media('web-loaf', '') + '</i><b>Farm loaf</b><span>$1.20</span></div><div class="c-card"><i>' + ui.media('web-pie', '') + '</i><b>Meat pie</b><span>$2.50</span></div><div class="c-card"><i>' + ui.media('web-scones', '') + '</i><b>Scones x6</b><span>$3.00</span></div></div>' +
             '</div></div>' +
           '</div>' +
         '</div>' +
@@ -58,12 +58,12 @@
     steps: [
       { id: 'new', label: 'Creating the project files', cur: '.c-new', click: true, d: 1200 },
       { id: 'html', label: 'Writing the page structure', cur: '.c-code', at: [.3, .2], click: true, d: 1700 },
-      { id: 'css', label: 'Styling the page', cur: '.c-tab--css', click: true, d: 1600 },
-      { id: 'menu', label: 'Adding the menu data', cur: '.c-tab--js', click: true, d: 1600 },
-      { id: 'build', label: 'Running the build', cur: '.c-term__b', at: [.3, .4], click: true, d: 1500, frame: '.c-ed' },
+      { id: 'css', label: 'Styling the page', cur: '.c-tab--css', click: true, d: 1600, frame: '.c-prev' },
+      { id: 'menu', label: 'Adding the menu data', cur: '.c-tab--js', click: true, d: 1600, frame: '.c-code' },
+      { id: 'build', label: 'Running the build', cur: '.c-term__b', at: [.3, .4], click: true, d: 1500, frame: '.c-term' },
       { id: 'fix', label: 'Fixing the build error', cur: '.c-bug', click: true, d: 1500 },
       { id: 'resp', label: 'Checking the mobile layout', cur: '.c-dev--m', click: true, d: 1500, frame: '.c-prev' },
-      { id: 'done', label: 'Website ready to review', cur: '.c-dev--d', click: true, d: 1500 }
+      { id: 'done', label: 'Website ready to review', cur: '.c-dev--d', click: true, d: 1500, frame: '.c-prev' }
     ]
   });
 })();

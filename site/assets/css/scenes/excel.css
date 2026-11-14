@@ -41,3 +41,5 @@
 .sc-excel .x-sum p { display: flex; justify-content: space-between; gap: 8px; margin: 0; padding: 5px 10px; font-size: 9.5px; color: var(--a-mute); border-bottom: 1px solid var(--a-line); }
 .sc-excel .x-sum p:last-child { border: 0; }
 .sc-excel .x-sum b { color: #fff; font-weight: 600; }
+.sc-excel .x-n7 { color: transparent !important; }
+.sc-excel.on-clean .x-n7 { color: var(--a-faint) !important; }

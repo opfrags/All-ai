@@ -1,0 +1,27 @@
+/* Scene: social content planning */
+.sc-social .s-ico { background: #b0477a; }
+.sc-social .s-brief { padding-bottom: 8px; }
+.sc-social .s-card { margin: 8px 8px 4px; padding: 7px 8px; border-radius: 7px; background: var(--a-panel2); border: 1px solid var(--a-line); font-size: 8.8px; line-height: 1.5; color: var(--a-text); outline-offset: 0; }
+.sc-social .s-card p { margin: 0; border-radius: 2px; transition: background .4s; }
+.sc-social .s-card.is-sel p { background: rgba(37, 99, 255, .4); }
+.sc-social .s-master p { min-height: 54px; }
+.sc-social .s-fmts { display: flex; align-items: flex-end; gap: 7px; padding: 8px; }
+.sc-social .s-fm { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 7.5px; color: var(--a-mute); }
+.sc-social .s-fm i { display: block; border-radius: 4px; border: 1px solid rgba(125, 162, 255, .6); background: linear-gradient(160deg, #24408f, #0f1a3a); box-shadow: inset 0 -8px 0 rgba(255, 255, 255, .16); }
+.sc-social .s-fm--sq i { width: 38px; height: 38px; } .sc-social .s-fm--st i { width: 27px; height: 48px; } .sc-social .s-fm--tx i { width: 44px; height: 24px; background: #1c2233; }
+.sc-social .s-cal { flex-direction: row; background: #11141b; }
+.sc-social .s-day { flex: 1; min-width: 0; border-right: 1px solid var(--a-line); padding: 0 4px; }
+.sc-social .s-dh { display: flex; justify-content: space-between; align-items: baseline; padding: 7px 3px 6px; border-bottom: 1px solid var(--a-line); margin-bottom: 6px; color: var(--a-faint); font-size: 8px; }
+.sc-social .s-dh b { color: var(--a-text); font-size: 9.5px; font-weight: 600; }
+.sc-social .s-post { position: relative; padding: 5px; border-radius: 7px; background: var(--a-panel2); border: 1px solid var(--a-line2); outline-offset: 0; }
+.sc-social .s-post.is-sel { outline-color: var(--a-blue-hi); box-shadow: 0 0 18px -6px rgba(37, 99, 255, 1); }
+.sc-social .s-th { display: block; height: 40px; border-radius: 4px; background: linear-gradient(160deg, #24408f, #0f1a3a); box-shadow: inset 0 -12px 0 rgba(255, 255, 255, .14); }
+.sc-social .s-post--st .s-th { height: 62px; background: linear-gradient(160deg, #5a3fa8, #1b1440); }
+.sc-social .s-post--tx .s-th { height: 22px; background: #1c2233; }
+.sc-social .s-post em { display: block; margin-top: 4px; font: 500 6.6px/1 'JetBrains Mono', monospace; letter-spacing: .08em; text-transform: uppercase; font-style: normal; color: var(--a-blue-hi); }
+.sc-social .s-post p { margin: 3px 0 4px; min-height: 30px; font-size: 7.6px; line-height: 1.35; color: var(--a-text); }
+.sc-social .s-badge { position: relative; display: inline-block; font-size: 6.8px; }
+.sc-social .s-badge u { text-decoration: none; padding: 1.5px 5px; border-radius: 6px; background: var(--a-panel3); color: #c5ccdb; }
+.sc-social .s-badge u.is-off { display: none; }
+.sc-social .s-badge .s-rdy { display: none; background: var(--a-blue); color: #fff; } .sc-social .s-badge .s-rdy.is-on { display: inline-block; }
+.sc-social .s-th { overflow: hidden; }
