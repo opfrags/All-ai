@@ -13,5 +13,5 @@
 | Old first-visit intro (coloured pills) | Replaced by the workstation load sequence | Removed from the new pages |
 | Background arcade canvas | Competed with the screens | Turned off with the bundle's own `data-no-arcade` switch |
 
-Not done: production deployment (not authorised), and pushing to GitHub was refused for this session
-(the Claude GitHub App has no access to the repository).
+Not done: production deployment (not authorised). The work is on the branch
+`claude/allai-website-redesign-1h9f7q`; no pull request has been opened.
