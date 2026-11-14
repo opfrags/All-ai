@@ -1,0 +1,112 @@
+/* All AI public (pre-login) pages: DARK THEME + the light/dark toggle.
+   Loaded ONLY on public pages: marketing site (site/*.html), auth pages (/login /signup /plans /audit /checkout /forgot /reset, 404) and legal pages.
+   Post-login pages (dashboard, onboarding, admin) never load this file, so they do not change.
+   Every rule is scoped to html[data-theme="dark"] (set before paint by /static/pub/theme-early.js, default dark), so light mode = the existing design.
+   Brand: ONE blue (#2563FF) for buttons, 8px button radius, no green / yellow, official white logo unchanged. CSP-safe: external stylesheet only. */
+
+/* ---------- toggle (all public pages, both themes; header is a dark pill in both) ---------- */
+.theme-toggle { display: none; }
+html[data-theme] .theme-toggle {
+  display: inline-grid; place-items: center; flex: none; position: relative;
+  width: 44px; height: 44px; padding: 0; margin: 0; border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, .22); background: transparent; color: #e3e8f7; cursor: pointer;
+  transition: background-color .2s, border-color .2s, color .2s; -webkit-tap-highlight-color: transparent;
+}
+.theme-toggle svg { grid-area: 1 / 1; display: block; transition: transform .35s cubic-bezier(.2, .8, .2, 1), opacity .25s; }
+.theme-toggle:hover { background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .4); color: #fff; }
+.theme-toggle:focus-visible { outline: 3px solid #8fb0ff; outline-offset: 2px; }
+/* the icon shows the CURRENT mode: moon = dark on, sun = light on */
+html[data-theme="dark"] .theme-toggle__sun, html[data-theme="light"] .theme-toggle__moon { opacity: 0; transform: rotate(-60deg) scale(.6); }
+@media (prefers-reduced-motion: reduce) { .theme-toggle svg { transition: none; } }
+/* marketing site header: CTA + toggle + burger sit together on the right */
+.nav__end { display: flex; align-items: center; gap: 8px; }
+/* auth + legal headers: toggle after the nav links */
+.auth-top .theme-toggle, body > header .theme-toggle { margin-left: 2px; }
+@media (max-width: 420px) {
+  html[data-theme] .theme-toggle { width: 44px; height: 44px; }
+  .auth-top { gap: .35rem; padding-right: 8px; }
+  .auth-top nav a { padding-left: .6rem; padding-right: .6rem; }
+}
+
+/* ---------- light theme: one contrast fix on the existing design ---------- */
+/* "Forgot password?" was light sky on a white card (fails WCAG AA); use the link blue in light mode. */
+html[data-theme="light"] .auth .forgot a { color: var(--blue2); }
+html[data-theme="light"] .auth .forgot a:hover { color: var(--ink); }
+
+/* ============================== DARK THEME ============================== */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  /* site + auth tokens (same names in site/style.css and auth-v2.css) */
+  --paper: #080b16; --paper2: #0d1222; --white: #10162b; --card: #10162b;
+  --ink: #eef1f8; --ink2: #d5dbeb;
+  --blue: #2563ff; --blue2: #8fb0ff; --navy: #142a78; --sky: #15214a; --sky2: #b4c8ff;
+  --mute: #a4acc4; --faint: #9aa2bd; --mute-d: #aab4d2; --rule: #252c47; --rule2: #4a5375;
+  --red: #ff9b8f; --red-bg: #2a1213; --red-line: #7a3029;
+  /* dark surfaces that used to be the ink colour (header pill, selected cards, footers) */
+  --surf: #141a31; --surf-line: rgba(255, 255, 255, .09);
+  /* buttons.css */
+  --btn-ink: #eef1f8; --btn-text: #eef1f8; --btn-hairline: rgba(238, 241, 248, .55); --btn-ring: #8fb0ff;
+  /* legal pages (theme.css) */
+  --aa-bg: #080b16; --aa-bg-2: #0d1222; --aa-sky: #15214a; --aa-surface: #10162b; --aa-surface-2: #161c34; --aa-border: #252c47;
+  --aa-text: #eef1f8; --aa-muted: #a4acc4; --aa-link: #8fb0ff; --aa-accent-soft: #3a4f8f; --aa-info: #8fb0ff; --aa-info-bg: #121b3d;
+  --aa-danger: #ff9b8f; --aa-danger-bg: #2a1213; --aa-danger-text: #ff9b8f; --aa-danger-deep: #2a1213;
+}
+html[data-theme="dark"] body { background-color: var(--paper); }
+html[data-theme="dark"] ::selection { background: #2b4cc4; color: #fff; }
+
+/* ---------- shared: the dark "ink" surfaces become a lifted navy-black with a hairline ---------- */
+html[data-theme="dark"] .nav__in,
+html[data-theme="dark"] .auth-top,
+html[data-theme="dark"] body > header {
+  background: var(--surf); box-shadow: 0 0 0 1px var(--surf-line), 0 20px 40px -24px rgba(0, 0, 0, .9);
+}
+html[data-theme="dark"] .site-foot { background: #0b1020; border-top: 1px solid var(--surf-line); }
+html[data-theme="dark"] .btn--ghost { border-color: rgba(238, 241, 248, .32); }
+
+/* ---------- marketing site (body.site) ---------- */
+html[data-theme="dark"] .drawer,
+html[data-theme="dark"] .on-dark,
+html[data-theme="dark"] .marq,
+html[data-theme="dark"] .chap--3,
+html[data-theme="dark"] .fold--3,
+html[data-theme="dark"] .plan--3,
+html[data-theme="dark"] .split2__a { background-color: var(--surf); }
+html[data-theme="dark"] .fold--3, html[data-theme="dark"] .plan--3, html[data-theme="dark"] .chap--3, html[data-theme="dark"] .split2__a { box-shadow: inset 0 0 0 1px var(--surf-line); }
+html[data-theme="dark"] .fold--4 { background-color: #182040; }
+html[data-theme="dark"] .marq { border-top: 1px solid var(--surf-line); border-bottom: 1px solid var(--surf-line); }
+html[data-theme="dark"] body.site .btn:hover { background: #1d4ed8; border-color: #1d4ed8; color: #fff; }
+html[data-theme="dark"] body.site .btn--line { color: var(--ink); border-color: rgba(238, 241, 248, .55); }
+html[data-theme="dark"] body.site .btn--line:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+html[data-theme="dark"] .chap--2 .lead { color: #c3cbe3; }
+html[data-theme="dark"] .chap__dot { background-color: #24356f; }
+html[data-theme="dark"] .mem p.big em, html[data-theme="dark"] .story__num { color: #7c9cff; }
+html[data-theme="dark"] .faq details { border-color: rgba(238, 241, 248, .28); }
+html[data-theme="dark"] .faq summary:hover, html[data-theme="dark"] .faq details[open] summary { color: #8fb0ff; }
+html[data-theme="dark"] .plan-biz .plan__tag { color: var(--sky2); }
+
+/* ---------- auth pages (body.auth): login, signup, plans, checkout, audit, forgot, reset, 404 ---------- */
+html[data-theme="dark"] .auth .card { box-shadow: 0 0 0 1px rgba(255, 255, 255, .02), 0 30px 60px -40px rgba(0, 0, 0, .9); }
+html[data-theme="dark"] .auth input:-webkit-autofill { -webkit-text-fill-color: var(--ink); box-shadow: 0 0 0 40px #161c34 inset; caret-color: var(--ink); }
+html[data-theme="dark"] .auth input::placeholder, html[data-theme="dark"] .auth textarea::placeholder { color: #8c94b0; }
+html[data-theme="dark"] .auth button.pw-toggle:hover { background: rgba(255, 255, 255, .08); }
+html[data-theme="dark"] .flash.err { color: #ffd2cc; }
+html[data-theme="dark"] .flash.err a { color: #ffd2cc; }
+html[data-theme="dark"] .field--err > label, html[data-theme="dark"] .field--err .check__text { color: #ffb3a9; }
+html[data-theme="dark"] .test-banner { background: #1b2342; color: #d6e2ff; }
+/* selected plan / method / audit option: lifted surface + blue edge (instead of solid ink) */
+html[data-theme="dark"] .plan--selected { background: #18214a; border-color: var(--blue); box-shadow: inset 0 0 0 1px var(--blue); }
+html[data-theme="dark"] .plan--selected:hover { border-color: var(--blue); }
+html[data-theme="dark"] .method--selected, html[data-theme="dark"] .method:has(input:checked) { background: #18214a; }
+html[data-theme="dark"] .opt--selected, html[data-theme="dark"] .opt:has(input:checked) { background: #18214a; border-color: var(--blue); box-shadow: inset 0 0 0 1px var(--blue); }
+html[data-theme="dark"] .audit-next { background: var(--surf); border-color: var(--surf-line); }
+/* sign-in provider buttons (Google / Apple / X): dark tile, light text, brand icons unchanged */
+html[data-theme="dark"] .auth .btn.provider--google, html[data-theme="dark"] .auth .btn.provider--apple, html[data-theme="dark"] .auth .btn.provider--x { background: #161c34; color: var(--ink); border-color: rgba(238, 241, 248, .4); }
+html[data-theme="dark"] .auth .btn.provider:not(.disabled):hover { background: #1b2448; border-color: var(--blue); color: #fff; }
+/* audit form select */
+html[data-theme="dark"] .auth select { background-image: linear-gradient(45deg, transparent 50%, #eef1f8 50%), linear-gradient(135deg, #eef1f8 50%, transparent 50%); }
+html[data-theme="dark"] .auth select option { background: #10162b; color: #eef1f8; }
+/* the white "apple" glyph etc. stay legible: X / Apple icons use currentColor */
+
+/* ---------- legal pages (layout() with publicTheme) ---------- */
+html[data-theme="dark"] body[data-page^="legal-"] > header { background: var(--surf); }
+html[data-theme="dark"] body[data-page^="legal-"] .site-foot { color: #aab4d2; }

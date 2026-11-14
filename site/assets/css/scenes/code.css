@@ -1,0 +1,63 @@
+/* Scene: website development */
+.sc-code .c-ico { background: #2a3142; font-size: 6.5px; letter-spacing: -.03em; }
+.sc-code .c-new { display: grid; place-items: center; width: 14px; height: 14px; border-radius: 4px; color: var(--a-text); font-size: 12px; line-height: 1; }
+.sc-code .c-new.is-sel { background: var(--a-blue); outline-color: transparent; }
+.sc-code .c-ed { background: #0f1218; overflow: hidden; }
+.sc-code .c-tabs { flex: none; height: 24px; display: flex; align-items: flex-end; gap: 2px; padding: 0 6px; background: var(--a-panel); border-bottom: 1px solid var(--a-line); }
+.sc-code .c-tab { height: 20px; display: inline-flex; align-items: center; padding: 0 9px; border-radius: 5px 5px 0 0; color: var(--a-faint); font-size: 9.5px; }
+.sc-code .c-tab.is-sel { background: #0f1218; color: #fff; outline-color: transparent; box-shadow: inset 0 1.5px 0 var(--a-blue); }
+.sc-code .c-code { position: relative; flex: 1; min-height: 0; }
+.sc-code .c-pane { position: absolute; inset: 8px 6px 0 0; opacity: 0; transition: opacity .25s; }
+.sc-code.on-new .c-pane--html, .sc-code.on-css .c-pane--css, .sc-code.on-menu .c-pane--js { opacity: 1; }
+.sc-code.on-css .c-pane--html, .sc-code.on-menu .c-pane--css { opacity: 0; }
+.sc-code .c-l { display: flex; height: 14px; font: 400 8.6px/14px 'JetBrains Mono', monospace; color: #c9d1e0; white-space: pre; border-radius: 2px; }
+.sc-code .c-l i { flex: none; width: 24px; padding-right: 8px; text-align: right; color: #454c5e; font-style: normal; }
+.sc-code .c-l b { font-weight: 400; }
+.sc-code .c-l .k { color: #7da2ff; } .sc-code .c-l .at { color: #c4b5ff; } .sc-code .c-l .s { color: #9fdcff; } .sc-code .c-l .n { color: #ffd9a0; }
+.sc-code .c-bug { text-decoration: none; color: #ff8f8f; transition: opacity .3s; }
+.sc-code.on-build .c-l--bug { background: rgba(255, 110, 110, .16); box-shadow: inset 2px 0 0 #ff7a7a; }
+.sc-code.on-fix .c-l--bug { background: rgba(37, 99, 255, .16); box-shadow: inset 2px 0 0 var(--a-blue-hi); }
+.sc-code.on-resp .c-l--bug { background: none; box-shadow: none; }
+.sc-code .c-term { flex: none; height: 76px; background: #0a0c11; border-top: 1px solid var(--a-line); }
+.sc-code .c-term__b { padding: 6px 10px; font-size: 8.6px; line-height: 1.6; color: #aab2c2; }
+.sc-code .c-term__b p { margin: 0; }
+.sc-code .c-err { color: #ff8f8f; } .sc-code.on-fix .c-err { color: #6b7389; text-decoration: line-through; }
+.sc-code .c-okl { color: var(--a-blue-hi); }
+.sc-code .c-prev { flex: none; width: 236px; display: flex; flex-direction: column; background: #1a1e27; border-left: 1px solid var(--a-line); transition: width .8s var(--ease); }
+.sc-code .c-url { flex: none; height: 24px; display: flex; align-items: center; gap: 6px; padding: 0 8px; border-bottom: 1px solid var(--a-line); }
+.sc-code .c-dots { display: flex; gap: 3px; } .sc-code .c-dots i { width: 5px; height: 5px; border-radius: 50%; background: #333a48; }
+.sc-code .c-addr { flex: 1; height: 15px; padding: 0 8px; border-radius: 8px; background: #0d1016; color: var(--a-mute); font-size: 8px; line-height: 15px; }
+.sc-code .c-dev { display: grid; place-items: center; width: 17px; height: 17px; border-radius: 4px; color: var(--a-mute); }
+.sc-code .c-dev svg { width: 11px; height: 11px; }
+.sc-code .c-dev.is-sel { background: var(--a-blue-soft); color: #fff; outline-color: transparent; }
+.sc-code .c-stage { flex: 1; min-height: 0; display: flex; justify-content: center; padding: 8px; overflow: hidden; }
+.sc-code .c-page { width: 100%; height: 100%; background: #fff; color: #111; border-radius: 4px; overflow: hidden; transition: width .7s var(--ease), border-radius .7s, box-shadow .7s; font-family: 'Times New Roman', serif; }
+.sc-code .c-hero { padding: 6px 8px; transition: background .6s, color .6s, padding .6s var(--ease); }
+.sc-code .c-brand { display: none; font: 700 8px/1 'DM Sans', sans-serif; letter-spacing: .02em; }
+.sc-code .c-hero h5 { margin: 0 0 2px; font-size: 12px; line-height: 1.2; font-weight: 700; }
+.sc-code .c-hero p { margin: 0 0 4px; font-size: 8.5px; }
+.sc-code .c-btn { font-size: 8.5px; color: #1a0dab; text-decoration: underline; transition: background .5s, color .5s, padding .5s; }
+.sc-code.on-css .c-page { font-family: 'DM Sans', sans-serif; }
+.sc-code.on-css .c-hero { padding: 14px 14px 16px; background: #14233f; color: #fff; }
+.sc-code.on-css .c-brand { display: block; margin-bottom: 12px; color: #9fb6ff; }
+.sc-code.on-css .c-hero h5 { font: 700 15px/1.15 'DM Sans', sans-serif; letter-spacing: -.01em; margin-bottom: 4px; }
+.sc-code.on-css .c-hero p { font-size: 8px; color: #c4cee6; margin-bottom: 9px; }
+.sc-code.on-css .c-btn { display: inline-block; padding: 5px 10px; border-radius: 8px; background: #2563ff; color: #fff; font-weight: 600; font-size: 8px; text-decoration: none; }
+.sc-code .c-menu { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 10px; }
+.sc-code .c-card { padding: 5px; border: 1px solid #e3e7f0; border-radius: 6px; font-size: 7.5px; display: flex; flex-direction: column; gap: 2px; color: #14233f; }
+.sc-code .c-card i { height: 26px; border-radius: 4px; background: linear-gradient(135deg, #e9d5b5, #c79a5b); }
+.sc-code .c-card:nth-child(2) i { background: linear-gradient(135deg, #f0c9a0, #a8672e); } .sc-code .c-card:nth-child(3) i { background: linear-gradient(135deg, #f4e2c4, #d9b27a); }
+.sc-code .c-card b { font-weight: 600; } .sc-code .c-card span { color: #2563ff; font-weight: 700; }
+.sc-code.on-resp .c-page { width: 112px; border-radius: 12px; box-shadow: 0 0 0 3px #0b0d12, 0 0 0 4px #3a4252; }
+.sc-code.on-resp .c-menu { grid-template-columns: 1fr; }
+.sc-code.on-resp .c-card { flex-direction: row; align-items: center; gap: 6px; }
+.sc-code.on-resp .c-card i { width: 22px; height: 18px; flex: none; }
+.sc-code.on-resp .c-card span { margin-left: auto; }
+.sc-code.on-done .c-prev { width: 400px; }
+.sc-code.on-done .c-page { width: 100%; border-radius: 4px; box-shadow: none; }
+.sc-code.on-done .c-menu { grid-template-columns: repeat(3, 1fr); }
+.sc-code.on-done .c-card { flex-direction: column; align-items: stretch; gap: 2px; }
+.sc-code.on-done .c-card i { width: auto; height: 44px; }
+.sc-code.on-done .c-card span { margin-left: 0; }
+.sc-code.on-done .c-hero { padding: 20px 22px 24px; }
+.sc-code.on-done .c-hero h5 { font-size: 21px; }
